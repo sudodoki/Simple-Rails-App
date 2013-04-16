@@ -9,11 +9,11 @@ class AlbumsController < ApplicationController
       format.json { render json: @albums }
     end
   end
-  def by_artist
-    @artist = Artist.find(params[:id], include: :albums)
-    @albums = @artist.albums
-    render action: :index, locals: {title: "#{@artist.scenic_name.capitalize}'s albums", new_acceptable: true}
-  end
+  # def by_artist
+  #   @artist = Artist.find(params[:id], include: :albums)
+  #   @albums = @artist.albums
+  #   render action: :index, locals: {title: "#{@artist.scenic_name.capitalize}'s albums", new_acceptable: true}
+  # end
 
   # GET /albums/1
   # GET /albums/1.json

@@ -1,9 +1,8 @@
 Jukebox::Application.routes.draw do
   resources :songs, :albums
-
   resources :artists, shallow: true do
     resources :albums do
-      resources :songsg
+      resources :songs
     end
   end
   # match "/albums" => 'albums#index', via: get, as: 'albums'

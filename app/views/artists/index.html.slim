@@ -11,7 +11,7 @@ table
   - @artists.each do |artist|
     tr
       td= artist.scenic_name
-      td= link_to 'Show', by_artist_path(artist)
+      td= link_to 'Show Albums', artist_albums_path(artist)
       td= link_to 'Edit', edit_artist_path(artist)
       td= link_to 'Destroy', artist, method: :delete, confirm: 'Are you sure?'
 br/
