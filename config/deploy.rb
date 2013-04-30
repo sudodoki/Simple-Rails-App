@@ -4,10 +4,16 @@ set :repository,  "git@github.com:sudodoki/Simple-Rails-App.git"
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :domain, '10.0.2.15'
+set :domain, '127.0.0.1'
 role :web, domain                        # Your HTTP server, Apache/etc
 role :app, domain                    # This may be the same as your `Web` server
 role :db,  domain, :primary => true # This is where Rails migrations will run
+
+set :user, 'vagrant'
+set :use_sudo, false
+
+set :deploy_to, "/home/vagrant/apps/#{application}"
+set :ssh_options, { :forward_agent => true, :port => 2222 }
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
